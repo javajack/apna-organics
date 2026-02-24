@@ -438,13 +438,13 @@ img { display: block; max-width: 100%; }
 .footer-logo { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
 .footer-logo-img { height: 32px; width: auto; opacity: 0.9; }
 .logo-text--light { color: #fff; }
-.footer-tagline { font-family: 'Lora', serif; font-size: 1rem; font-style: italic; color: rgba(255, 255, 255, 0.4); font-weight: 400; }
+.footer-tagline { font-family: 'Lora', serif; font-size: 1rem; font-style: italic; color: rgba(255, 255, 255, 0.65); font-weight: 400; }
 .footer-links-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; }
-.footer-col h4 { font-size: 0.8125rem; font-weight: 600; color: rgba(255, 255, 255, 0.8); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1rem; }
-.footer-col a { display: block; font-size: 0.9375rem; color: rgba(255, 255, 255, 0.4); margin-bottom: 0.5rem; transition: color 0.2s var(--ease-out); }
+.footer-col h3 { font-size: 0.8125rem; font-weight: 600; color: rgba(255, 255, 255, 0.8); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1rem; }
+.footer-col a { display: block; font-size: 0.9375rem; color: rgba(255, 255, 255, 0.65); margin-bottom: 0.5rem; transition: color 0.2s var(--ease-out); }
 .footer-col a:hover { color: rgba(255, 255, 255, 0.8); }
 .footer-bottom { padding-top: 2rem; text-align: center; }
-.footer-bottom span { font-size: 0.8125rem; color: rgba(255, 255, 255, 0.25); }
+.footer-bottom span { font-size: 0.8125rem; color: rgba(255, 255, 255, 0.55); }
 @media (max-width: 768px) { .footer-top { grid-template-columns: 1fr; gap: 2.5rem; } .footer-links-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; } }
 
 /* ============================================================
