@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fdf6f3"/>
+      <stop offset="100%" stop-color="#f5f0ec"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Brand accent bar -->
+  <rect x="0" y="0" width="1200" height="6" fill="rgb(130,21,21)"/>
+  <!-- Molecular pattern background -->
+  <g stroke="rgba(130,21,21,0.06)" stroke-width="1" fill="none">
+    <polygon points="950,80 984,100 984,140 950,160 916,140 916,100"/>
+    <polygon points="984,100 1018,120 1018,160 984,180 950,160 950,120"/>
+    <polygon points="1018,120 1052,140 1052,180 1018,200 984,180 984,140"/>
+    <polygon points="1052,60 1086,80 1086,120 1052,140 1018,120 1018,80"/>
+    <polygon points="1086,80 1120,100 1120,140 1086,160 1052,140 1052,100"/>
+  </g>
+  <g fill="rgba(130,21,21,0.08)">
+    <circle cx="950" cy="80" r="3"/><circle cx="984" cy="100" r="3"/><circle cx="1018" cy="120" r="3"/>
+    <circle cx="1052" cy="140" r="3"/><circle cx="1086" cy="80" r="3"/><circle cx="1120" cy="100" r="3"/>
+  </g>
+  <!-- Fabric waves -->
+  <path d="M0 480 Q200 440 400 470 Q600 500 800 460 Q1000 420 1200 450 L1200 630 L0 630Z" fill="rgba(130,21,21,0.04)"/>
+  <path d="M0 520 Q200 480 400 510 Q600 540 800 500 Q1000 460 1200 490 L1200 630 L0 630Z" fill="rgba(130,21,21,0.06)"/>
+  <path d="M0 560 Q200 520 400 550 Q600 580 800 540 Q1000 500 1200 530 L1200 630 L0 630Z" fill="rgba(130,21,21,0.09)"/>
+  <!-- Logo mark -->
+  <g transform="translate(80,80) scale(0.7)">
+    <path d="M13 2 C13 32.69 13 63.38 13 95 C31.81 95 50.62 95 70 95 C70 64.31 70 33.62 70 2 C51.19 2 32.38 2 13 2Z" fill="#fdf6f3"/>
+    <path d="M0 0 C23.76 0 47.52 0 72 0 C72 37.29 72 74.58 72 113 C48.24 113 24.48 113 0 113 C0 75.71 0 38.42 0 0 Z M13 2 C13 32.69 13 63.38 13 95 C31.81 95 50.62 95 70 95 C70 64.31 70 33.62 70 2 C51.19 2 32.38 2 13 2Z" fill="#692620"/>
+    <path d="M0 0 C2.18 2.71 3.6 5.17 4.8 8.43 C6.83 13.78 9.33 18.83 11.92 23.92 C13.73 29.11 12.29 32.58 10 37.34 C9.19 38.92 8.38 40.49 7.56 42.06 C3.99 48.89 3.99 48.89 1 56 C0.34 56 -0.32 56 -1 56 C-1.77 54.44 -1.77 54.44 -2.57 52.85 C-4.32 49.35 -5.05 47.88 -5.78 46.41 C-7.37 43.22 -8.97 40.05 -10.67 36.92 C-13.28 32.21 -12.95 23.67 -10.82 19.43 C-9.93 17.76 -9.03 16.09 -8.12 14.43 C-4.6 7.87 -2.4 3.89 0 0Z" fill="#66221C" transform="translate(42,6)"/>
+    <path d="M21 64 C35.19 64 49.38 64 64 64 C64 66.31 64 68.62 64 71 C49.81 71 35.62 71 21 71 C21 68.98 21 67.02 21 64Z" fill="#6B2D27"/>
+    <path d="M44 73 C49.28 73 54.56 73 60 73 C61.15 75.22 62.31 77.45 63.5 79.75 C66.33 85.25 67 87.11 67 91 C61.72 91 56.44 91 51 91 C49.66 88.37 48.32 85.75 47 83.12 C46.61 82.37 46.23 81.63 45.84 80.86 C45 79 45 79 44 73Z" fill="#672620"/>
+    <path d="M24 73 C29.28 73 34.56 73 40 73 C37.85 79.43 35.08 84.96 32 91 C26.72 91 21.44 91 16 91 C17.98 84.42 20.51 78.92 24 73Z" fill="#66251F"/>
+  </g>
+  <!-- Company name -->
+  <text x="80" y="200" font-family="sans-serif" font-size="52" font-weight="800" fill="#1c1917" letter-spacing="-1.5">Apna Organics Pvt Ltd</text>
+  <!-- Tagline -->
+  <text x="80" y="260" font-family="serif" font-size="28" font-style="italic" fill="rgb(130,21,21)">Chemistries that shape modern textiles</text>
+  <!-- Description -->
+  <text x="80" y="320" font-family="sans-serif" font-size="20" fill="#44403c">India's largest family-managed textile chemical manufacturer</text>
+  <text x="80" y="352" font-family="sans-serif" font-size="20" fill="#44403c">50+ years | 5 countries | 200+ formulations</text>
+  <!-- Product keywords -->
+  <g font-family="sans-serif" font-size="14" fill="rgb(130,21,21)">
+    <rect x="80" y="390" width="100" height="28" rx="14" fill="rgba(130,21,21,0.07)"/>
+    <text x="105" y="409">Denim</text>
+    <rect x="190" y="390" width="80" height="28" rx="14" fill="rgba(130,21,21,0.07)"/>
+    <text x="210" y="409">Knits</text>
+    <rect x="280" y="390" width="140" height="28" rx="14" fill="rgba(130,21,21,0.07)"/>
+    <text x="310" y="409">Home Textile</text>
+    <rect x="430" y="390" width="120" height="28" rx="14" fill="rgba(130,21,21,0.07)"/>
+    <text x="453" y="409">Garments</text>
+    <rect x="560" y="390" width="150" height="28" rx="14" fill="rgba(130,21,21,0.07)"/>
+    <text x="583" y="409">LUDOX Finishes</text>
+    <rect x="720" y="390" width="80" height="28" rx="14" fill="rgba(130,21,21,0.07)"/>
+    <text x="737" y="409">Nylon</text>
+  </g>
+  <!-- Certifications -->
+  <text x="80" y="470" font-family="sans-serif" font-size="14" font-weight="600" fill="#78716c" letter-spacing="1">ISO 9001 / 14001 / 45001  |  GOTS  |  OEKO-TEX Eco Passport  |  Star Export House</text>
+  <!-- Website -->
+  <text x="80" y="570" font-family="monospace" font-size="16" fill="#a8a29e">apnaorganics.in</text>
+</svg>
