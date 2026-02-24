@@ -22,6 +22,16 @@
 
   window.addEventListener('scroll', handleNavScroll, { passive: true });
 
+  // --- Scroll progress bar ---
+  var scrollProgress = document.getElementById('scrollProgress');
+  function updateScrollProgress() {
+    var scrollTop = window.scrollY;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    scrollProgress.style.width = progress + '%';
+  }
+  window.addEventListener('scroll', updateScrollProgress, { passive: true });
+
   // --- Mobile menu ---
   const navToggle = document.getElementById('navToggle');
   const mobileMenu = document.getElementById('mobileMenu');

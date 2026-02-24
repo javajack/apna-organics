@@ -17,6 +17,9 @@
   --bg: #fafaf9;
   --bg-warm: #f5f0ec;
   --bg-tint: #fdf6f3;
+  --bg-blush: #faf3f0;
+  --bg-sage: #f4f5f0;
+  --bg-cream: #f8f4ef;
   --surface: #ffffff;
   --text-primary: #1c1917;
   --text-secondary: #44403c;
@@ -55,7 +58,7 @@ img { display: block; max-width: 100%; }
 .section-title { font-family: 'Outfit', sans-serif; font-size: clamp(2.25rem, 5vw, 3.75rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; color: var(--text-primary); margin-bottom: 1.5rem; }
 .section-title em { font-family: 'Lora', serif; font-style: italic; font-weight: 500; color: var(--brand); }
 .section-subtitle { font-size: 1.1875rem; color: var(--text-secondary); line-height: 1.75; max-width: 65ch; }
-.section { padding: 7rem 0; }
+.section { padding: 7rem 0; position: relative; transition: background-color 0.6s ease; }
 @media (max-width: 768px) { .section { padding: 4.5rem 0; } }
 
 /* ============================================================
@@ -157,7 +160,7 @@ img { display: block; max-width: 100%; }
 /* ============================================================
    ABOUT
    ============================================================ */
-.section--about { background: var(--bg); }
+.section--about { background: var(--bg-cream); }
 .about-grid { display: grid; grid-template-columns: 0.45fr 0.55fr; gap: 4rem; align-items: start; }
 .about-text { font-size: 1.125rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem; max-width: 60ch; }
 .about-tagline { margin-top: 1rem; font-family: 'Lora', serif; font-size: 1.25rem; font-style: italic; font-weight: 500; color: var(--brand); padding-left: 1.25rem; border-left: 3px solid var(--brand); }
@@ -181,6 +184,7 @@ img { display: block; max-width: 100%; }
    GALLERY
    ============================================================ */
 .section--gallery { background: var(--bg); }
+.section--gallery::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); }
 .gallery-header { margin-bottom: 3rem; }
 .gallery-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-auto-rows: 240px; gap: 1rem; margin-bottom: 3rem; }
 .gallery-item { position: relative; border-radius: var(--radius-lg); overflow: hidden; }
@@ -203,7 +207,7 @@ img { display: block; max-width: 100%; }
 /* ============================================================
    PRODUCTS — Expanded
    ============================================================ */
-.section--products { background: var(--bg-warm); }
+.section--products { background: var(--bg-blush); }
 .products-header { margin-bottom: 4rem; }
 .products-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.25rem; margin-bottom: 4rem; }
 .product-card { background: var(--surface); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 2rem; transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out); position: relative; overflow: hidden; }
@@ -326,7 +330,7 @@ img { display: block; max-width: 100%; }
 /* ============================================================
    LEADERSHIP — with real photos
    ============================================================ */
-.section--leadership { background: var(--bg); }
+.section--leadership { background: var(--bg-sage); }
 .leadership-header { margin-bottom: 3.5rem; }
 .leadership-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
 .leader-card { display: flex; gap: 1.5rem; align-items: flex-start; padding: 2rem; background: var(--surface); border: 1px solid var(--border-light); border-radius: var(--radius-lg); transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out); }
@@ -362,7 +366,7 @@ img { display: block; max-width: 100%; }
 /* ============================================================
    SUSTAINABILITY — Redesigned with icon + body layout
    ============================================================ */
-.section--sustainability { background: var(--bg); }
+.section--sustainability { background: var(--bg-cream); }
 
 .sustain-top { display: grid; grid-template-columns: 0.45fr 0.55fr; gap: 3rem; align-items: start; margin-bottom: 3.5rem; }
 .sustain-header { /* no additional needed */ }
@@ -403,7 +407,7 @@ img { display: block; max-width: 100%; }
 /* ============================================================
    CONTACT
    ============================================================ */
-.section--contact { background: var(--bg); }
+.section--contact { background: var(--bg-sage); }
 .contact-layout { display: grid; grid-template-columns: 0.45fr 0.55fr; gap: 4rem; align-items: start; }
 .contact-info { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1rem; }
 .contact-row { display: flex; align-items: flex-start; gap: 0.875rem; }
@@ -459,6 +463,32 @@ img { display: block; max-width: 100%; }
 .reveal--d3 { transition-delay: 0.3s; }
 .reveal--d4 { transition-delay: 0.4s; }
 .reveal--visible { opacity: 1; transform: translateY(0); }
+
+/* --- Section Scroll Transitions --- */
+.section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  right: 5%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(130, 21, 21, 0.08), transparent);
+  pointer-events: none;
+}
+.section:last-of-type::after { display: none; }
+
+/* Scroll progress bar at top */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--brand), var(--brand-light));
+  z-index: 200;
+  width: 0%;
+  transition: width 0.1s linear;
+  pointer-events: none;
+}
 
 /* --- Subtle Browse Animations --- */
 
