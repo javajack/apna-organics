@@ -51,10 +51,12 @@
   <!-- Preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://img1.wsimg.com" />
+  <link rel="preconnect" href="https://img1.wsimg.com" crossorigin />
+  <link rel="preconnect" href="https://i.ytimg.com" crossorigin />
 
   <!-- DNS prefetch for external resources -->
   <link rel="dns-prefetch" href="https://www.youtube-nocookie.com" />
+  <link rel="dns-prefetch" href="https://www.gstatic.com" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -384,11 +386,14 @@
 </head>
 <body>
 
+  <!-- Skip to content for keyboard users -->
+  <a href="#about" class="skip-link">Skip to main content</a>
+
   <!-- Navigation -->
-  <nav class="nav" id="nav">
+  <nav class="nav" id="nav" aria-label="Main navigation">
     <div class="nav-inner">
       <a href="#" class="nav-logo">
-        <img src="apna-organics.svg" alt="Apna Organics Pvt Ltd" class="nav-logo-img" />
+        <img src="apna-organics.svg" alt="Apna Organics Pvt Ltd" class="nav-logo-img" width="36" height="57" />
         <span class="logo-text">Apna Organics</span>
       </a>
       <div class="nav-links" id="navLinks">
@@ -409,7 +414,7 @@
   </nav>
 
   <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu">
     <div class="mobile-menu-inner">
       <a href="#about" class="mobile-link">About</a>
       <a href="#products" class="mobile-link">Products</a>
@@ -421,6 +426,7 @@
     </div>
   </div>
 
+  <main>
   <!-- ========== HERO ========== -->
   <section class="hero" id="hero">
     <div class="hero-bg">
@@ -431,7 +437,7 @@
     <div class="hero-content">
       <div class="hero-left">
         <div class="hero-tag fade-in">
-          <svg class="ico ico--xs" viewBox="0 0 256 256"><path d="M208,144a15.78,15.78,0,0,1-10.42,14.94l-51.65,19-19,51.65a15.92,15.92,0,0,1-29.88,0L78.07,178,26.42,159A15.92,15.92,0,0,1,26.42,129l51.65-19L97.05,58.42a15.92,15.92,0,0,1,29.88,0l19,51.61,51.65,19A15.78,15.78,0,0,1,208,144Z" fill="currentColor"/></svg>
+          <svg aria-hidden="true" class="ico ico--xs" viewBox="0 0 256 256"><path d="M208,144a15.78,15.78,0,0,1-10.42,14.94l-51.65,19-19,51.65a15.92,15.92,0,0,1-29.88,0L78.07,178,26.42,159A15.92,15.92,0,0,1,26.42,129l51.65-19L97.05,58.42a15.92,15.92,0,0,1,29.88,0l19,51.61,51.65,19A15.78,15.78,0,0,1,208,144Z" fill="currentColor"/></svg>
           Est. 1975 &mdash; Five Decades of Chemistry
         </div>
         <h1 class="hero-title fade-in fade-in--d1">
@@ -444,7 +450,7 @@
         </p>
         <div class="hero-actions fade-in fade-in--d3">
           <a href="#products" class="btn btn--primary">
-            <svg class="ico ico--btn" viewBox="0 0 256 256"><path d="M117.66,170.34a8,8,0,0,1,0,11.32l-8,8a8,8,0,0,1-11.32-11.32l8-8A8,8,0,0,1,117.66,170.34ZM216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM120,168H88a8,8,0,0,1,0-16h32a8,8,0,0,1,0,16Zm48-48H88a8,8,0,0,1,0-16h80a8,8,0,0,1,0,16Zm32-32H88a8,8,0,0,1,0-16h112a8,8,0,0,1,0,16Z" fill="currentColor"/></svg>
+            <svg aria-hidden="true" class="ico ico--btn" viewBox="0 0 256 256"><path d="M117.66,170.34a8,8,0,0,1,0,11.32l-8,8a8,8,0,0,1-11.32-11.32l8-8A8,8,0,0,1,117.66,170.34ZM216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM120,168H88a8,8,0,0,1,0-16h32a8,8,0,0,1,0,16Zm48-48H88a8,8,0,0,1,0-16h80a8,8,0,0,1,0,16Zm32-32H88a8,8,0,0,1,0-16h112a8,8,0,0,1,0,16Z" fill="currentColor"/></svg>
             Explore Products
           </a>
           <a href="#contact" class="btn btn--ghost">Contact Us</a>
@@ -547,27 +553,27 @@
       </div>
       <div class="gallery-grid">
         <div class="gallery-item gallery-item--tall reveal">
-          <img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/WhatsApp%20Image%202024-07-10%20at%2023.17.15_940f7436.jpg/:/rs=w:600,cg:true,m" alt="R&D Laboratory" loading="lazy" />
+          <img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/WhatsApp%20Image%202024-07-10%20at%2023.17.15_940f7436.jpg/:/rs=w:600,cg:true,m" alt="R&D Laboratory" loading="lazy" width="600" height="400" />
           <div class="gallery-label">R&D Laboratory</div>
         </div>
         <div class="gallery-item reveal reveal--d1">
-          <img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/WhatsApp%20Image%202024-07-10%20at%2023.17.15_a0579593.jpg/:/rs=w:600,cg:true,m" alt="Manufacturing Plant" loading="lazy" />
+          <img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/WhatsApp%20Image%202024-07-10%20at%2023.17.15_a0579593.jpg/:/rs=w:600,cg:true,m" alt="Manufacturing Plant" loading="lazy" width="600" height="400" />
           <div class="gallery-label">Manufacturing Unit</div>
         </div>
         <div class="gallery-item reveal reveal--d2">
-          <img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/WhatsApp%20Image%202024-07-10%20at%2023.17.16_c2889275.jpg/:/rs=w:600,cg:true,m" alt="Training Session" loading="lazy" />
+          <img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/WhatsApp%20Image%202024-07-10%20at%2023.17.16_c2889275.jpg/:/rs=w:600,cg:true,m" alt="Training Session" loading="lazy" width="600" height="400" />
           <div class="gallery-label">Training Sessions</div>
         </div>
         <div class="gallery-item reveal reveal--d1">
-          <img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/IMG_6771.JPG/:/rs=w:600,cg:true,m" alt="Industry Event" loading="lazy" />
+          <img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/IMG_6771.JPG/:/rs=w:600,cg:true,m" alt="Industry Event" loading="lazy" width="600" height="400" />
           <div class="gallery-label">Industry Events</div>
         </div>
         <div class="gallery-item gallery-item--wide reveal reveal--d2">
-          <img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/0Z6A4953.JPG/:/rs=w:900,cg:true,m" alt="Trade Show" loading="lazy" />
+          <img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/0Z6A4953.JPG/:/rs=w:900,cg:true,m" alt="Trade Show" loading="lazy" width="900" height="400" />
           <div class="gallery-label">Global Trade Shows</div>
         </div>
         <div class="gallery-item reveal reveal--d3">
-          <img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/IMG_5062.JPG/:/rs=w:600,cg:true,m" alt="Conference" loading="lazy" />
+          <img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/IMG_5062.JPG/:/rs=w:600,cg:true,m" alt="Conference" loading="lazy" width="600" height="400" />
           <div class="gallery-label">Conferences</div>
         </div>
       </div>
@@ -585,11 +591,11 @@
       <div class="reveal reveal--d1">
         <div class="video-embed-wrap" style="max-width: 900px;">
           <div class="video-embed">
-            <iframe src="https://www.youtube-nocookie.com/embed/Ji1C2dT3aDY?rel=0&modestbranding=1&playsinline=1" title="Apna Organics Company Profile" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/Ji1C2dT3aDY?rel=0&modestbranding=1&playsinline=1" title="Apna Organics Company Profile" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
           </div>
         </div>
         <p class="video-fallback" style="max-width: 900px;">
-          <svg class="ico ico--xs" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm-8,56a8,8,0,0,1,16,0v56a8,8,0,0,1-16,0Zm8,104a12,12,0,1,1,12-12A12,12,0,0,1,128,184Z" fill="currentColor"/></svg>
+          <svg aria-hidden="true" class="ico ico--xs" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm-8,56a8,8,0,0,1,16,0v56a8,8,0,0,1-16,0Zm8,104a12,12,0,1,1,12-12A12,12,0,0,1,128,184Z" fill="currentColor"/></svg>
           If the video doesn't load, <a href="https://www.youtube.com/watch?v=Ji1C2dT3aDY" target="_blank" rel="noopener">watch directly on YouTube</a>.
         </p>
       </div>
@@ -608,7 +614,7 @@
       <div class="bento-grid">
         <!-- Denim — large feature -->
         <div class="bento-card bento-card--lg reveal" id="prod-denim">
-          <div class="bento-card-img"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/iStock-926196762%20(1).jpg/:/rs=w:700,cg:true,m" alt="Denim fabric processing" loading="lazy" /></div>
+          <div class="bento-card-img"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/iStock-926196762%20(1).jpg/:/rs=w:700,cg:true,m" alt="Denim fabric processing" loading="lazy" width="700" height="400" /></div>
           <div class="bento-card-body">
             <h3 class="bento-card-title">Denim Fabric</h3>
             <p class="bento-card-desc">End-to-end denim mill chemistry: alpha-amylase desizing, indigo &amp; sulphur dyeing agents, anionic/non-ionic wetting &amp; scouring, mercerizing agents, organic peroxide stabilizers, sequestering agents, wet &amp; dry rubbing fastness improvers, PVA coating emulsions, and specialty yarn lubricants.</p>
@@ -618,7 +624,7 @@
 
         <!-- Knits -->
         <div class="bento-card reveal reveal--d1" id="prod-knits">
-          <div class="bento-card-img"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/iStock-607505108%20(1).jpg/:/rs=w:600,cg:true,m" alt="Knits fabric" loading="lazy" /></div>
+          <div class="bento-card-img"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/iStock-607505108%20(1).jpg/:/rs=w:600,cg:true,m" alt="Knits fabric" loading="lazy" width="600" height="400" /></div>
           <div class="bento-card-body">
             <h3 class="bento-card-title">Knits Fabrics</h3>
             <p class="bento-card-desc">Reactive levelling, concentrated acid &amp; neutral bio-polish enzymes (0.12&ndash;0.5% dosage), peroxide killers, GSM improvers, clay-based scouring, pectinase bio-scouring, and room-temperature neutral bio-polish.</p>
@@ -628,7 +634,7 @@
 
         <!-- Garments -->
         <div class="bento-card reveal reveal--d2" id="prod-garments">
-          <div class="bento-card-img"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/iStock-185110151.jpg/:/rs=w:600,cg:true,m" alt="Garment processing" loading="lazy" /></div>
+          <div class="bento-card-img"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/iStock-185110151.jpg/:/rs=w:600,cg:true,m" alt="Garment processing" loading="lazy" width="600" height="400" /></div>
           <div class="bento-card-body">
             <h3 class="bento-card-title">Garments</h3>
             <p class="bento-card-desc">Denim, non-denim &amp; knit garment processing: enzyme desizing, anti-back staining, lycra protectors, stone-free washes (waterless &amp; nano-bubble), laser boosters, eco-bleaching substitutes, and KMnO&#8324; replacement chemistry.</p>
@@ -638,7 +644,7 @@
 
         <!-- Specialty Finishes — LUDOX large feature -->
         <div class="bento-card bento-card--lg reveal" id="prod-ludox">
-          <div class="bento-card-img"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/iStock-1017015856.jpg/:/rs=w:700,cg:true,m" alt="LUDOX specialty textile finishes" loading="lazy" /></div>
+          <div class="bento-card-img"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/iStock-1017015856.jpg/:/rs=w:700,cg:true,m" alt="LUDOX specialty textile finishes" loading="lazy" width="700" height="400" /></div>
           <div class="bento-card-body">
             <h3 class="bento-card-title">Specialty Finishes &mdash; LUDOX Range</h3>
             <p class="bento-card-desc">15 advanced functional finishes: LUDOX AROMA (micro-capsules), LUDOX FR (flame retardant), LUDOX WR/OWR (water &amp; oil repellent), LUDOX Antimicrobial, LUDOX AO (anti-odor), LUDOX WICK (wicking), LUDOX POLYWICK (anti-static &amp; moisture management), LUDOX MR7 (mosquito repellent), LUDOX UVP (UV absorber), LUDOX APY (anti-phenolic yellowing), LUDOX FFR (wrinkle-free), LUDOX CE 30 (color enhancer), LUDOX TEMP (temperature regulation), and LUDOX RFI (rubbing fastness).</p>
@@ -648,7 +654,7 @@
 
         <!-- Home Textile -->
         <div class="bento-card reveal reveal--d1" id="prod-home">
-          <div class="bento-card-img"><img src="https://img1.wsimg.com/isteam/stock/10348/:/rs=w:600,cg:true,m" alt="Home textile" loading="lazy" /></div>
+          <div class="bento-card-img"><img src="https://img1.wsimg.com/isteam/stock/10348/:/rs=w:600,cg:true,m" alt="Home textile" loading="lazy" width="600" height="400" /></div>
           <div class="bento-card-body">
             <h3 class="bento-card-title">Home Textile</h3>
             <p class="bento-card-desc">Non-GMO alpha-amylase desizing, de-mineralizing agents, low/non-formaldehyde resins, resin-stable hydrophobic silicones, eco weight gainers, stiffening agents, and anti-static finishing for sheeting, curtains &amp; upholstery.</p>
@@ -658,7 +664,7 @@
 
         <!-- Shirting -->
         <div class="bento-card reveal reveal--d2" id="prod-shirting">
-          <div class="bento-card-img"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/iStock-1175487602.jpg/:/rs=w:600,cg:true,m" alt="Shirting fabric" loading="lazy" /></div>
+          <div class="bento-card-img"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/iStock-1175487602.jpg/:/rs=w:600,cg:true,m" alt="Shirting fabric" loading="lazy" width="600" height="400" /></div>
           <div class="bento-card-body">
             <h3 class="bento-card-title">Shirting &amp; Bottom Wear</h3>
             <p class="bento-card-desc">Oligomer removers, disperse dye carriers, low-temperature soaping, cationic/non-ionic softener flakes, reactive softeners, micro/macro silicones, polyurethane softeners, color enhancers, and polymeric softeners.</p>
@@ -668,7 +674,7 @@
 
         <!-- Yarn Dyeing -->
         <div class="bento-card reveal" id="prod-yarn">
-          <div class="bento-card-img"><img src="https://img1.wsimg.com/isteam/stock/jabbZr2/:/rs=w:600,cg:true,m" alt="Yarn dyeing" loading="lazy" /></div>
+          <div class="bento-card-img"><img src="https://img1.wsimg.com/isteam/stock/jabbZr2/:/rs=w:600,cg:true,m" alt="Yarn dyeing" loading="lazy" width="600" height="400" /></div>
           <div class="bento-card-body">
             <h3 class="bento-card-title">Yarn Dyeing</h3>
             <p class="bento-card-desc">Low-foaming wetting &amp; de-aerating agents, non-phosphate sequestering, disperse dye carriers, reactive dye-fixing, yarn lubricants, and acid buffer systems for package and hank dyeing.</p>
@@ -678,7 +684,7 @@
 
         <!-- Terry Towels -->
         <div class="bento-card reveal reveal--d1" id="prod-terry">
-          <div class="bento-card-img"><img src="https://img1.wsimg.com/isteam/stock/121651/:/rs=w:600,cg:true,m" alt="Terry towels" loading="lazy" /></div>
+          <div class="bento-card-img"><img src="https://img1.wsimg.com/isteam/stock/121651/:/rs=w:600,cg:true,m" alt="Terry towels" loading="lazy" width="600" height="400" /></div>
           <div class="bento-card-body">
             <h3 class="bento-card-title">Terry Towels</h3>
             <p class="bento-card-desc">Non-yellowing hydrophilic cationic softeners, hydrophilic micro/macro silicones, one-shot moisture management system, tensile strength improvers, and anti-phenolic yellowing agents.</p>
@@ -688,7 +694,7 @@
 
         <!-- Poly-Amide -->
         <div class="bento-card reveal reveal--d2" id="prod-nylon">
-          <div class="bento-card-img"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/iStock-669374574.jpg/:/rs=w:600,cg:true,m" alt="Nylon fabric" loading="lazy" /></div>
+          <div class="bento-card-img"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/iStock-669374574.jpg/:/rs=w:600,cg:true,m" alt="Nylon fabric" loading="lazy" width="600" height="400" /></div>
           <div class="bento-card-body">
             <h3 class="bento-card-title">Poly-Amide (Nylon)</h3>
             <p class="bento-card-desc">APEO/NPEO-free wetting &amp; scouring, phosphate-free sequestering, bisphenol-free levelling &amp; dye-fixing, and shear-stable non-yellowing exhaust finishing agents for nylon substrates.</p>
@@ -698,7 +704,7 @@
 
         <!-- Printing & OBAs -->
         <div class="bento-card reveal reveal--d1" id="prod-printing">
-          <div class="bento-card-img"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/iStock-111947465.jpg/:/rs=w:600,cg:true,m" alt="Textile printing" loading="lazy" /></div>
+          <div class="bento-card-img"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/iStock-111947465.jpg/:/rs=w:600,cg:true,m" alt="Textile printing" loading="lazy" width="600" height="400" /></div>
           <div class="bento-card-body">
             <h3 class="bento-card-title">Printing Auxiliaries &amp; OBAs</h3>
             <p class="bento-card-desc">Thickeners, fixers, and aids for reactive &amp; pigment printing. Optical brightening agents for enhanced whiteness across cotton, polyester, and blended fabrics.</p>
@@ -748,7 +754,7 @@
       </div>
       <div class="leadership-grid">
         <div class="leader-card reveal">
-          <div class="leader-photo"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/OBS-0001.jpg/:/cr=t:3.96%25,l:0%25,w:100%25,h:80.65%25/rs=w:400,h:400,cg:true" alt="Mr. Omprakash Saraf" loading="lazy" /></div>
+          <div class="leader-photo"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/OBS-0001.jpg/:/cr=t:3.96%25,l:0%25,w:100%25,h:80.65%25/rs=w:400,h:400,cg:true" alt="Mr. Omprakash Saraf" loading="lazy" width="400" height="400" /></div>
           <div class="leader-info">
             <h3 class="leader-name">Mr. Omprakash Saraf</h3>
             <span class="leader-role">Co-Managing Director</span>
@@ -757,7 +763,7 @@
           </div>
         </div>
         <div class="leader-card reveal reveal--d1">
-          <div class="leader-photo"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/SS-0001.jpg/:/cr=t:3.87%25,l:0%25,w:100%25,h:76.92%25/rs=w:400,h:400,cg:true" alt="Mr. Santosh Saraf" loading="lazy" /></div>
+          <div class="leader-photo"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/SS-0001.jpg/:/cr=t:3.87%25,l:0%25,w:100%25,h:76.92%25/rs=w:400,h:400,cg:true" alt="Mr. Santosh Saraf" loading="lazy" width="400" height="400" /></div>
           <div class="leader-info">
             <h3 class="leader-name">Mr. Santosh Saraf</h3>
             <span class="leader-role">Co-Managing Director</span>
@@ -766,7 +772,7 @@
           </div>
         </div>
         <div class="leader-card reveal reveal--d2">
-          <div class="leader-photo"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/AOS.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:94.34%25/rs=w:400,h:400,cg:true" alt="Mr. Ashutosh Saraf" loading="lazy" /></div>
+          <div class="leader-photo"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/AOS.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:94.34%25/rs=w:400,h:400,cg:true" alt="Mr. Ashutosh Saraf" loading="lazy" width="400" height="400" /></div>
           <div class="leader-info">
             <h3 class="leader-name">Mr. Ashutosh Saraf</h3>
             <span class="leader-role">Director &mdash; Technology &amp; Operations</span>
@@ -775,7 +781,7 @@
           </div>
         </div>
         <div class="leader-card reveal reveal--d3">
-          <div class="leader-photo"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/SSS.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:73.53%25/rs=w:400,h:400,cg:true" alt="Mr. Shivam Saraf" loading="lazy" /></div>
+          <div class="leader-photo"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/SSS.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:73.53%25/rs=w:400,h:400,cg:true" alt="Mr. Shivam Saraf" loading="lazy" width="400" height="400" /></div>
           <div class="leader-info">
             <h3 class="leader-name">Mr. Shivam Saraf</h3>
             <span class="leader-role">Director &mdash; Sustainability &amp; Innovation</span>
@@ -796,13 +802,13 @@
         <p class="section-subtitle reveal reveal--d2">Our manufacturing processes and products meet the highest international standards for quality, environmental responsibility, and workplace safety.</p>
       </div>
       <div class="cert-logos reveal reveal--d2">
-        <div class="cert-logo-item"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/Final_ISO_Grey-2015-Registered-sign.png/:/rs=h:80,cg:true,m" alt="ISO" loading="lazy" /><div class="cert-logo-label"><strong>ISO 9001 / 14001 / 45001</strong><span>Quality, Environmental &amp; Safety</span></div></div>
-        <div class="cert-logo-item"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/gots-logo_rgb_2018_transp_72dpi-d288713f.png/:/rs=h:80,cg:true,m" alt="GOTS" loading="lazy" /><div class="cert-logo-label"><strong>GOTS Certified</strong><span>Global Organic Textile Standard</span></div></div>
-        <div class="cert-logo-item"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/Oeko_tex_-_umbrella_brand_-_11_2022.svg.png/:/rs=h:80,cg:true,m" alt="OEKO-TEX" loading="lazy" /><div class="cert-logo-label"><strong>OEKO-TEX Eco Passport</strong><span>Certified Safe Chemicals</span></div></div>
-        <div class="cert-logo-item"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/star-export-house-certificate_icon-300x215.png/:/rs=h:80,cg:true,m" alt="Star Export House" loading="lazy" /><div class="cert-logo-label"><strong>Star Export House</strong><span>Government Recognized</span></div></div>
-        <div class="cert-logo-item"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/D%26B%20Seal.jpg/:/rs=h:80,cg:true,m" alt="D&amp;B" loading="lazy" /><div class="cert-logo-label"><strong>Dun &amp; Bradstreet</strong><span>Verified Business Credential</span></div></div>
-        <div class="cert-logo-item"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/Higgs%20Indes%20Logo.png/:/rs=h:80,cg:true,m" alt="Higg Index" loading="lazy" /><div class="cert-logo-label"><strong>Higg Index</strong><span>Sustainability Performance</span></div></div>
-        <div class="cert-logo-item"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/Scivera_Logo.jpg/:/rs=h:80,cg:true,m" alt="Scivera" loading="lazy" /><div class="cert-logo-label"><strong>Scivera</strong><span>Chemical Safety Assessment</span></div></div>
+        <div class="cert-logo-item"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/Final_ISO_Grey-2015-Registered-sign.png/:/rs=h:80,cg:true,m" alt="ISO 9001, 14001, 45001 Certification" loading="lazy" width="80" height="80" /><div class="cert-logo-label"><strong>ISO 9001 / 14001 / 45001</strong><span>Quality, Environmental &amp; Safety</span></div></div>
+        <div class="cert-logo-item"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/gots-logo_rgb_2018_transp_72dpi-d288713f.png/:/rs=h:80,cg:true,m" alt="GOTS Certified" loading="lazy" width="80" height="80" /><div class="cert-logo-label"><strong>GOTS Certified</strong><span>Global Organic Textile Standard</span></div></div>
+        <div class="cert-logo-item"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/Oeko_tex_-_umbrella_brand_-_11_2022.svg.png/:/rs=h:80,cg:true,m" alt="OEKO-TEX Eco Passport" loading="lazy" width="80" height="80" /><div class="cert-logo-label"><strong>OEKO-TEX Eco Passport</strong><span>Certified Safe Chemicals</span></div></div>
+        <div class="cert-logo-item"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/star-export-house-certificate_icon-300x215.png/:/rs=h:80,cg:true,m" alt="Star Export House Certificate" loading="lazy" width="80" height="80" /><div class="cert-logo-label"><strong>Star Export House</strong><span>Government Recognized</span></div></div>
+        <div class="cert-logo-item"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/D%26B%20Seal.jpg/:/rs=h:80,cg:true,m" alt="Dun and Bradstreet Verified" loading="lazy" width="80" height="80" /><div class="cert-logo-label"><strong>Dun &amp; Bradstreet</strong><span>Verified Business Credential</span></div></div>
+        <div class="cert-logo-item"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/Higgs%20Indes%20Logo.png/:/rs=h:80,cg:true,m" alt="Higg Index Sustainability" loading="lazy" width="80" height="80" /><div class="cert-logo-label"><strong>Higg Index</strong><span>Sustainability Performance</span></div></div>
+        <div class="cert-logo-item"><img src="https://img1.wsimg.com/isteam/ip/2a7a42de-062a-4489-8085-9c1e754151f3/Scivera_Logo.jpg/:/rs=h:80,cg:true,m" alt="Scivera Chemical Safety" loading="lazy" width="80" height="80" /><div class="cert-logo-label"><strong>Scivera</strong><span>Chemical Safety Assessment</span></div></div>
       </div>
     </div>
   </section>
@@ -826,7 +832,7 @@
           </div>
         </div>
         <p class="video-fallback" style="max-width: 900px;">
-          <svg class="ico ico--xs" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm-8,56a8,8,0,0,1,16,0v56a8,8,0,0,1-16,0Zm8,104a12,12,0,1,1,12-12A12,12,0,0,1,128,184Z" fill="currentColor"/></svg>
+          <svg aria-hidden="true" class="ico ico--xs" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm-8,56a8,8,0,0,1,16,0v56a8,8,0,0,1-16,0Zm8,104a12,12,0,1,1,12-12A12,12,0,0,1,128,184Z" fill="currentColor"/></svg>
           If the video doesn't load, <a href="https://www.youtube.com/watch?v=H5Qfnb-LCL8" target="_blank" rel="noopener">watch directly on YouTube</a>.
         </p>
       </div>
@@ -834,7 +840,7 @@
       <div class="sustain-grid">
         <div class="sustain-card reveal">
           <div class="sustain-card-icon">
-            <svg class="ico" viewBox="0 0 256 256"><path d="M223.68,66.15,135.68,18a15.88,15.88,0,0,0-15.36,0l-88,48.17a16,16,0,0,0-8.32,14v95.64a16,16,0,0,0,8.32,14l88,48.17a15.88,15.88,0,0,0,15.36,0l88-48.17a16,16,0,0,0,8.32-14V80.18A16,16,0,0,0,223.68,66.15ZM128,32l74.11,40.62L128,115.09,53.89,72.62ZM40,90l80,43.78v85.79L40,175.82Zm96,129.57V133.82l80-43.78v85.79Z" fill="currentColor"/></svg>
+            <svg aria-hidden="true" class="ico" viewBox="0 0 256 256"><path d="M223.68,66.15,135.68,18a15.88,15.88,0,0,0-15.36,0l-88,48.17a16,16,0,0,0-8.32,14v95.64a16,16,0,0,0,8.32,14l88,48.17a15.88,15.88,0,0,0,15.36,0l88-48.17a16,16,0,0,0,8.32-14V80.18A16,16,0,0,0,223.68,66.15ZM128,32l74.11,40.62L128,115.09,53.89,72.62ZM40,90l80,43.78v85.79L40,175.82Zm96,129.57V133.82l80-43.78v85.79Z" fill="currentColor"/></svg>
           </div>
           <div class="sustain-card-body">
             <h3>Resource Conservation</h3>
@@ -844,7 +850,7 @@
 
         <div class="sustain-card reveal reveal--d1">
           <div class="sustain-card-icon">
-            <svg class="ico" viewBox="0 0 256 256"><path d="M224,60H196V36a20,20,0,0,0-20-20H80A20,20,0,0,0,60,36V60H32A12,12,0,0,0,20,72V200a20,20,0,0,0,20,20H216a20,20,0,0,0,20-20V72A12,12,0,0,0,224,60ZM84,40h88V60H84ZM44,196V84H212V196Zm100-68a16,16,0,0,1-16,16H128a16,16,0,0,1-16-16V120a8,8,0,0,1,16,0v8h16v-8a8,8,0,0,1,16,0Zm-32,32a8,8,0,0,1,0,16,8,8,0,0,1,0-16Z" fill="currentColor"/></svg>
+            <svg aria-hidden="true" class="ico" viewBox="0 0 256 256"><path d="M224,60H196V36a20,20,0,0,0-20-20H80A20,20,0,0,0,60,36V60H32A12,12,0,0,0,20,72V200a20,20,0,0,0,20,20H216a20,20,0,0,0,20-20V72A12,12,0,0,0,224,60ZM84,40h88V60H84ZM44,196V84H212V196Zm100-68a16,16,0,0,1-16,16H128a16,16,0,0,1-16-16V120a8,8,0,0,1,16,0v8h16v-8a8,8,0,0,1,16,0Zm-32,32a8,8,0,0,1,0,16,8,8,0,0,1,0-16Z" fill="currentColor"/></svg>
           </div>
           <div class="sustain-card-body">
             <h3>Chemical Traceability</h3>
@@ -854,7 +860,7 @@
 
         <div class="sustain-card reveal reveal--d2">
           <div class="sustain-card-icon">
-            <svg class="ico" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216ZM173.66,82.34a8,8,0,0,1,0,11.32l-40,40a8,8,0,0,1-11.32-11.32l40-40A8,8,0,0,1,173.66,82.34ZM96,16a8,8,0,0,1,8-8h48a8,8,0,0,1,0,16H104A8,8,0,0,1,96,16Z" fill="currentColor"/></svg>
+            <svg aria-hidden="true" class="ico" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216ZM173.66,82.34a8,8,0,0,1,0,11.32l-40,40a8,8,0,0,1-11.32-11.32l40-40A8,8,0,0,1,173.66,82.34ZM96,16a8,8,0,0,1,8-8h48a8,8,0,0,1,0,16H104A8,8,0,0,1,96,16Z" fill="currentColor"/></svg>
           </div>
           <div class="sustain-card-body">
             <h3>Carbon Footprint Reduction</h3>
@@ -864,7 +870,7 @@
 
         <div class="sustain-card reveal reveal--d3">
           <div class="sustain-card-icon">
-            <svg class="ico" viewBox="0 0 256 256"><path d="M226.53,56.41l-96-32a8,8,0,0,0-5.06,0l-96,32A8,8,0,0,0,24,64v80a8,8,0,0,0,16,0V75.1L73.59,86.29a64,64,0,0,0,20.65,88.05C70.84,189.67,48,215,48,224a8,8,0,0,0,16,0c0-14.23,35.82-32,64-32s64,17.77,64,32a8,8,0,0,0,16,0c0-9-22.84-34.33-46.24-49.66a64,64,0,0,0,20.65-88.05L224,64.9V144a8,8,0,0,0,16,0V64A8,8,0,0,0,226.53,56.41ZM128,168a48,48,0,1,1,48-48A48.05,48.05,0,0,1,128,168Z" fill="currentColor"/></svg>
+            <svg aria-hidden="true" class="ico" viewBox="0 0 256 256"><path d="M226.53,56.41l-96-32a8,8,0,0,0-5.06,0l-96,32A8,8,0,0,0,24,64v80a8,8,0,0,0,16,0V75.1L73.59,86.29a64,64,0,0,0,20.65,88.05C70.84,189.67,48,215,48,224a8,8,0,0,0,16,0c0-14.23,35.82-32,64-32s64,17.77,64,32a8,8,0,0,0,16,0c0-9-22.84-34.33-46.24-49.66a64,64,0,0,0,20.65-88.05L224,64.9V144a8,8,0,0,0,16,0V64A8,8,0,0,0,226.53,56.41ZM128,168a48,48,0,1,1,48-48A48.05,48.05,0,0,1,128,168Z" fill="currentColor"/></svg>
           </div>
           <div class="sustain-card-body">
             <h3>Education &amp; Community</h3>
@@ -906,21 +912,21 @@
           <h2 class="section-title reveal reveal--d1">Ready to discuss<br/><em>your requirements?</em></h2>
           <div class="contact-info reveal reveal--d2">
             <div class="contact-row">
-              <svg class="ico ico--contact" viewBox="0 0 256 256"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z" fill="currentColor"/></svg>
+              <svg aria-hidden="true" class="ico ico--contact" viewBox="0 0 256 256"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z" fill="currentColor"/></svg>
               <div><a href="mailto:info@apnaorganics.in">info@apnaorganics.in</a><a href="mailto:apnaorganics@outlook.com">apnaorganics@outlook.com</a></div>
             </div>
             <div class="contact-row">
-              <svg class="ico ico--contact" viewBox="0 0 256 256"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.69-1.09,8.44,8.44,0,0,0,.74-.55L168.89,152l47,21.06h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z" fill="currentColor"/></svg>
+              <svg aria-hidden="true" class="ico ico--contact" viewBox="0 0 256 256"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.69-1.09,8.44,8.44,0,0,0,.74-.55L168.89,152l47,21.06h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z" fill="currentColor"/></svg>
               <div><a href="tel:+919320483759">+91 93204 83759</a><a href="tel:+918828138906">+91 88281 38906</a></div>
             </div>
             <div class="contact-row">
-              <svg class="ico ico--contact" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z" fill="currentColor"/></svg>
+              <svg aria-hidden="true" class="ico ico--contact" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z" fill="currentColor"/></svg>
               <div><span>Mon &ndash; Sat: 09:30 AM &ndash; 06:30 PM</span></div>
             </div>
           </div>
           <div class="contact-social reveal reveal--d3">
-            <a href="https://www.facebook.com" target="_blank" rel="noopener" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener" class="social-link" aria-label="Facebook"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
           </div>
         </div>
         <div class="contact-right reveal reveal--d2">
@@ -936,20 +942,22 @@
     </div>
   </section>
 
+  </main>
+
   <!-- ========== FOOTER ========== -->
   <footer class="footer">
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
           <div class="footer-logo">
-            <img src="apna-organics.svg" alt="Apna Organics" class="footer-logo-img" />
+            <img src="apna-organics.svg" alt="Apna Organics" class="footer-logo-img" width="32" height="51" />
             <span class="logo-text logo-text--light">Apna Organics Pvt Ltd</span>
           </div>
           <p class="footer-tagline">Contributing Towards A Better Tomorrow</p>
         </div>
         <div class="footer-links-grid">
           <div class="footer-col"><h4>Company</h4><a href="#about">About Us</a><a href="#leadership">Leadership</a><a href="#certifications">Certifications</a><a href="#sustainability">Sustainability</a></div>
-          <div class="footer-col"><h4>Products</h4><a href="#products">Denim Fabric</a><a href="#products">Knits &amp; Garments</a><a href="#products">Home Textile</a><a href="#products">Specialty Finishes</a></div>
+          <div class="footer-col"><h4>Products</h4><a href="#prod-denim">Denim Fabric</a><a href="#prod-knits">Knits &amp; Garments</a><a href="#prod-home">Home Textile</a><a href="#prod-ludox">Specialty Finishes</a></div>
           <div class="footer-col"><h4>Connect</h4><a href="mailto:info@apnaorganics.in">info@apnaorganics.in</a><a href="tel:+919320483759">+91 93204 83759</a><a href="#global">Our Offices</a><a href="#contact">Contact Form</a></div>
         </div>
       </div>
