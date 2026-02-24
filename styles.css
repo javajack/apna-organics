@@ -216,6 +216,92 @@ img { display: block; max-width: 100%; }
   .product-card--featured { grid-column: 1; }
 }
 
+/* ============================================================
+   BENTO GRID — Product Cards with Images
+   ============================================================ */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 4rem;
+}
+
+.bento-card {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+  display: flex;
+  flex-direction: column;
+}
+.bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 56px rgba(28, 25, 23, 0.08);
+}
+
+.bento-card--lg {
+  grid-column: span 2;
+}
+
+.bento-card-img {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.bento-card--lg .bento-card-img {
+  height: 260px;
+}
+.bento-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out);
+}
+.bento-card:hover .bento-card-img img {
+  transform: scale(1.05);
+}
+
+.bento-card-body {
+  padding: 1.5rem 1.75rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.bento-card-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.625rem;
+  color: var(--text-primary);
+}
+
+.bento-card-desc {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+.bento-card .product-card-tags {
+  margin-top: auto;
+}
+
+@media (max-width: 1024px) {
+  .bento-grid { grid-template-columns: repeat(2, 1fr); }
+  .bento-card--lg { grid-column: span 2; }
+}
+@media (max-width: 768px) {
+  .bento-grid { grid-template-columns: 1fr; }
+  .bento-card--lg { grid-column: 1; }
+  .bento-card-img { height: 180px; }
+  .bento-card--lg .bento-card-img { height: 200px; }
+}
+
 /* Process Steps */
 .products-process { background: var(--surface); border: 1px solid var(--border-light); border-radius: var(--radius-xl); padding: 3rem; }
 .process-title { font-family: 'Outfit', sans-serif; font-size: 1.375rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 2.5rem; }
@@ -363,6 +449,71 @@ img { display: block; max-width: 100%; }
 .reveal--d3 { transition-delay: 0.3s; }
 .reveal--d4 { transition-delay: 0.4s; }
 .reveal--visible { opacity: 1; transform: translateY(0); }
+
+/* --- Subtle Browse Animations --- */
+
+/* Section tags slide in from left */
+.reveal--visible .section-tag {
+  animation: slideInTag 0.6s var(--ease-out) both;
+}
+@keyframes slideInTag {
+  from { opacity: 0; transform: translateX(-12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Staggered card entrance for grids */
+.bento-grid .bento-card.reveal--visible,
+.sustain-grid .sustain-card.reveal--visible,
+.cert-logos .cert-logo-item.reveal--visible,
+.leadership-grid .leader-card.reveal--visible {
+  animation: cardUp 0.6s var(--ease-out) both;
+}
+@keyframes cardUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Soft scale-in for gallery images */
+.gallery-item {
+  transition: transform 0.5s var(--ease-out), opacity 0.5s var(--ease-out);
+}
+
+/* Hover glow on certification badges */
+.cert-logo-item:hover img {
+  filter: brightness(1.06);
+  transition: filter 0.3s var(--ease-out);
+}
+
+/* Pulsing accent on hero tag dot */
+.hero-tag .ico {
+  animation: pulse 2.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Smooth underline draw on nav links */
+.nav-link::after {
+  transition: width 0.35s var(--ease-out);
+}
+
+/* Contact form focus ring animation */
+.form-group input:focus,
+.form-group textarea:focus {
+  transition: border-color 0.3s var(--ease-out), box-shadow 0.4s var(--ease-out);
+}
+
+/* Global card tilt micro-interaction */
+.global-card:hover {
+  transform: translateY(-3px) rotate(-0.3deg);
+}
+
+/* Sustainability icon pop on hover */
+.sustain-card:hover .sustain-card-icon {
+  transform: scale(1.08);
+  transition: transform 0.3s var(--ease-out);
+}
 
 ::selection { background: rgba(130, 21, 21, 0.15); color: var(--text-primary); }
 ::-webkit-scrollbar { width: 8px; }
