@@ -139,9 +139,14 @@ img { display: block; max-width: 100%; }
 @media (max-width: 768px) {
   .hero-content { grid-template-columns: 1fr; padding: 7rem 1.25rem 3rem; gap: 2.5rem; }
   .hero-right { display: none; }
-  .hero-stats { flex-wrap: wrap; gap: 0; }
-  .hero-stat { padding: 0 1.25rem; }
-  .hero-stat-divider { height: 32px; }
+  .hero-stats { display: flex; flex-wrap: nowrap; justify-content: flex-start; align-items: flex-start; gap: 0; }
+  .hero-stat { flex: 0 0 auto; padding: 0 1rem; text-align: center; }
+  .hero-stat:first-child { padding-left: 0; }
+  .hero-stat-row { display: flex; align-items: baseline; justify-content: center; gap: 0; white-space: nowrap; }
+  .hero-stat-num { font-size: 1.75rem; }
+  .hero-stat-plus { font-size: 1.75rem; }
+  .hero-stat-divider { height: 28px; }
+  .hero-stat-label { font-size: 0.75rem; }
   .hero-actions { flex-direction: column; }
 }
 
@@ -179,8 +184,8 @@ img { display: block; max-width: 100%; }
 .gallery-item:hover img { transform: scale(1.05); }
 .gallery-item--tall { grid-row: span 2; }
 .gallery-item--wide { grid-column: span 2; }
-.gallery-label { position: absolute; bottom: 0; left: 0; right: 0; padding: 1rem 1.25rem; background: linear-gradient(to top, rgba(28, 25, 23, 0.7), transparent); color: #fff; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.02em; opacity: 0; transform: translateY(4px); transition: all 0.35s var(--ease-out); }
-.gallery-item:hover .gallery-label { opacity: 1; transform: translateY(0); }
+.gallery-label { position: absolute; bottom: 0; left: 0; right: 0; padding: 1rem 1.25rem; background: linear-gradient(to top, rgba(28, 25, 23, 0.65), transparent); color: #fff; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.02em; opacity: 1; transition: background 0.35s var(--ease-out); }
+.gallery-item:hover .gallery-label { background: linear-gradient(to top, rgba(28, 25, 23, 0.8), transparent); }
 
 .gallery-video { border-radius: var(--radius-xl); overflow: hidden; box-shadow: 0 16px 48px rgba(28, 25, 23, 0.06); max-width: 900px; margin: 0 auto; }
 
