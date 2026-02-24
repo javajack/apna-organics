@@ -81,43 +81,47 @@
     });
   }
 
-  // --- Counter animation ---
+  // --- Counter animation (IntersectionObserver, no forced reflow) ---
   var counters = document.querySelectorAll('[data-count]');
-  var counterDone = false;
 
-  function animateCounters() {
-    if (counterDone) return;
+  function animateCounter(el) {
+    var target = parseInt(el.getAttribute('data-count'), 10);
+    var duration = 1800;
+    var startTime = null;
 
-    counters.forEach(function (el) {
-      var rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        counterDone = true;
-        var target = parseInt(el.getAttribute('data-count'), 10);
-        var duration = 1800;
-        var start = 0;
-        var startTime = null;
-
-        function step(timestamp) {
-          if (!startTime) startTime = timestamp;
-          var progress = Math.min((timestamp - startTime) / duration, 1);
-          // Ease out cubic
-          var eased = 1 - Math.pow(1 - progress, 3);
-          el.textContent = Math.floor(eased * target);
-          if (progress < 1) {
-            requestAnimationFrame(step);
-          } else {
-            el.textContent = target;
-          }
-        }
-
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      var progress = Math.min((timestamp - startTime) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(eased * target);
+      if (progress < 1) {
         requestAnimationFrame(step);
+      } else {
+        el.textContent = target;
       }
-    });
+    }
+
+    requestAnimationFrame(step);
   }
 
-  window.addEventListener('scroll', animateCounters, { passive: true });
-  // Run once on load
-  animateCounters();
+  if ('IntersectionObserver' in window && counters.length) {
+    var counterObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            counterObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+    counters.forEach(function (el) { counterObserver.observe(el); });
+  } else {
+    counters.forEach(function (el) {
+      el.textContent = el.getAttribute('data-count');
+    });
+  }
 
   // --- Smooth scroll for anchor links ---
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {

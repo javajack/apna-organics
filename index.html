@@ -48,18 +48,19 @@
   <link rel="icon" type="image/svg+xml" href="apna-organics.svg" />
   <link rel="apple-touch-icon" href="apna-organics.svg" />
 
-  <!-- Preconnect for performance -->
+  <!-- Preconnect for performance (max 4) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://img1.wsimg.com" crossorigin />
-  <link rel="preconnect" href="https://i.ytimg.com" crossorigin />
 
-  <!-- DNS prefetch for external resources -->
+  <!-- DNS prefetch for below-fold resources -->
+  <link rel="dns-prefetch" href="https://img1.wsimg.com" />
+  <link rel="dns-prefetch" href="https://i.ytimg.com" />
   <link rel="dns-prefetch" href="https://www.youtube-nocookie.com" />
-  <link rel="dns-prefetch" href="https://www.gstatic.com" />
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- Fonts — non-render-blocking async load -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" /></noscript>
   <link rel="stylesheet" href="styles.css" />
 
   <!-- JSON-LD Structured Data: Organization -->
@@ -443,7 +444,7 @@
           <svg aria-hidden="true" class="ico ico--xs" viewBox="0 0 256 256"><path d="M208,144a15.78,15.78,0,0,1-10.42,14.94l-51.65,19-19,51.65a15.92,15.92,0,0,1-29.88,0L78.07,178,26.42,159A15.92,15.92,0,0,1,26.42,129l51.65-19L97.05,58.42a15.92,15.92,0,0,1,29.88,0l19,51.61,51.65,19A15.78,15.78,0,0,1,208,144Z" fill="currentColor"/></svg>
           Est. 1975 &mdash; Five Decades of Chemistry
         </div>
-        <h1 class="hero-title fade-in fade-in--d1">
+        <h1 class="hero-title fade-in">
           Chemistries that shape<br/><em>modern textiles</em>
         </h1>
         <p class="hero-desc fade-in fade-in--d2">
